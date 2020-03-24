@@ -1,5 +1,5 @@
 let employees = [];
-const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture,email, location, phone, dob &noinfo &nat=US`
+const urlAPI = `https://fsjs-public-api-backup.herokuapp.com/api/`
 const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-container");
@@ -49,7 +49,7 @@ function displayModal(index) {
 
     const modalHTML = `
         <img class="avatar" src="${picture.large}" />
-        <div class="text-container">
+        <div class="modal-text-container">
         <h2 class="name">${name.first} ${name.last}</h2>
         <p class="email">${email}</p>
         <p class="address">${city}</p>
