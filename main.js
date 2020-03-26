@@ -2,7 +2,7 @@ let employees = [];
 const urlAPI = `https://fsjs-public-api-backup.herokuapp.com/api/`
 const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
-const modalContainer = document.querySelector(".modal-container");
+const modalContainer = document.querySelector(".modal-text-container");
 const modalClose = document.querySelector(".modal-close");
 
 // fetch data from API
