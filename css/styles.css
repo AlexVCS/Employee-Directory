@@ -3,7 +3,20 @@ body {
 }
 
 .head {
-  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+.head h1:hover {
+  color: red;
+}
+
+.search {
+  align-self: center;
+}
+
+.searchField {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .grid-container {
@@ -19,6 +32,9 @@ body {
   display: flex;
   border: 1px solid darkgrey;
   border-radius: 10px;
+}
+.card:hover {
+  cursor: pointer;
 }
 
 .avatar {
@@ -38,6 +54,7 @@ body {
   padding-left: 15px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   align-content: space-around;
 }
 
@@ -53,9 +70,17 @@ body {
   bottom: 0;
 }
 
+.darkbg {
+  background-color: rgba(34, 34, 34, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+}
+
 .modal {
   width: 375px;
-  margin: 15% auto auto;
+  margin: 5% auto auto;
   position: relative;
   text-align: center;
   background: #fff;
@@ -72,6 +97,7 @@ body {
   position: absolute;
   right: 15px;
   top: 5px;
+  font-size: 20px;
   cursor: pointer;
   background-color: Transparent;
   background-repeat: no-repeat;

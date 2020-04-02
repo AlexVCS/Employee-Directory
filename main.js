@@ -4,6 +4,8 @@ const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-text-container");
 const modalClose = document.querySelector(".modal-close");
+const searchField = document.querySelector(".searchField");
+const employeeCards = document.querySelectorAll(".card");
 
 // fetch data from API
 fetch(urlAPI)
@@ -39,6 +41,16 @@ function displayEmployees(employeeData) {
     gridContainer.innerHTML = employeeHTML;
 }
 
+// employee search function
+// function search(employees) {
+ 
+//         if (name.toLowerCase().indexOf(filter) > -1) {
+//             li[i].style.display = "";
+//         } else {
+//             li[i].style.display = "none";
+//         }
+//     }
+
 function displayModal(index) {
 
     // use object destructuring to make the template literal easier to follow
@@ -55,8 +67,8 @@ function displayModal(index) {
         <p class="address">${city}</p>
         <hr />
         <p>${phone}</p>
-        <p class="address">${street}, ${state} ${postcode}</p>
-        <p>Birthday:${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}</p>
+        <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
+        <p>Birthday: ${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
     `;
 
@@ -80,3 +92,9 @@ gridContainer.addEventListener('click', e => {
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
+
+function viewModal(index) {
+    // opens the clicked modal
+    const currentIndex = parseInt(this.dataset.index);
+    // currentIndex.valueOf
+}
