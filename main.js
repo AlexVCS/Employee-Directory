@@ -5,7 +5,6 @@ const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-text-container");
 const modalClose = document.querySelector(".modal-close");
 const searchField = document.querySelector(".searchField");
-const employeeCards = document.querySelectorAll(".card");
 
 // fetch data from API
 fetch(urlAPI)
@@ -39,22 +38,23 @@ function displayEmployees(employeeData) {
     `
     });
     gridContainer.innerHTML = employeeHTML;
-}
 
-searchField.addEventListener('keyup', search);
-
-// employee search function
-function search(employees) {
-    let filter, name, employeeCards;
-    name = document.querySelectorAll('name');
-    filter= name.textContent.toLowerCase();
-   
-        if (name.indexOf(filter) > -1) {
-            employeeCards.style.display = "";
-        } else {
-            employeeCards.style.display = "none";
+    // employee search function
+    function search() {
+        const names = document.querySelectorAll('.name');
+        const employeeCards = document.querySelectorAll(".card");
+        for (let i = 0; i < names.length; i++) {
+          let name = names[i].textContent.toLowerCase();
+          let filter = event.target.value;
+          if (name.indexOf(filter) > -1) {
+            employeeCards[i].style.display = "";
+          } else {
+            employeeCards[i].style.display = "none";
+          }
         }
-    }
+      }
+      searchField.addEventListener('keyup', search);
+}
 
 function displayModal(index) {
 
