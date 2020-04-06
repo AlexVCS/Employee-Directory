@@ -1,5 +1,5 @@
 let employees = [];
-const urlAPI = `https://fsjs-public-api-backup.herokuapp.com/api/`
+const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture,email, location, phone, dob &noinfo &nat=US`
 const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-text-container");
@@ -41,15 +41,20 @@ function displayEmployees(employeeData) {
     gridContainer.innerHTML = employeeHTML;
 }
 
+searchField.addEventListener('keyup', search);
+
 // employee search function
-// function search(employees) {
- 
-//         if (name.toLowerCase().indexOf(filter) > -1) {
-//             li[i].style.display = "";
-//         } else {
-//             li[i].style.display = "none";
-//         }
-//     }
+function search(employees) {
+    let filter, name, employeeCards;
+    name = document.querySelectorAll('name');
+    filter= name.textContent.toLowerCase();
+   
+        if (name.indexOf(filter) > -1) {
+            employeeCards.style.display = "";
+        } else {
+            employeeCards.style.display = "none";
+        }
+    }
 
 function displayModal(index) {
 
@@ -61,7 +66,15 @@ function displayModal(index) {
 
     const modalHTML = `
         <img class="avatar" src="${picture.large}" />
+        <div class="arrow">
+            <img src="icons8-left-24.png" alt="back-arrow"/>
+        </div> <!-- closing tag for arrow -->
+        <div class="arrowForward">
+            <img src="icons8-right-24.png" alt="forward-arrow"/>
+        </div> <!-- closing tag for arrowForward -->
         <div class="modal-text-container">
+      
+       
         <h2 class="name">${name.first} ${name.last}</h2>
         <p class="email">${email}</p>
         <p class="address">${city}</p>
@@ -93,8 +106,10 @@ modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
 
-function viewModal(index) {
-    // opens the clicked modal
-    const currentIndex = parseInt(this.dataset.index);
-    // currentIndex.valueOf
-}
+// document.querySelector(".arrow").addEventListener('click');
+// document.querySelector(".arrowForward").addEventListener('click',);
+
+// enabling arrows on each side of the employee cards
+// function nextCard(employee) {
+
+// }
