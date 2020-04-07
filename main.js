@@ -106,16 +106,15 @@ modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
 
-document.querySelector(".arrow").addEventListener('click');
-document.querySelector(".arrowForward").addEventListener('click');
-
-let index = parseInt(this.dataset.index);
+const modal = document.querySelector('.modal');
 
 // enabling arrows on each side of the employee cards
-function viewModal(index) {
-    if (index++) {
-        displayModal(+1);
-    } else if (index--) {
-        displayModal(-1);
+modal.addEventListener('click', (e =>{
+    const leftArrow = document.querySelector(".arrow");
+    const rightArrow = document.querySelector(".arrowForward");
+    if (e.target === leftArrow) {
+        displayModal++;
+    } else if (e.target === rightArrow) {
+        displayModal--;
     }
-}
+}))
