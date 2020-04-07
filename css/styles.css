@@ -74,10 +74,16 @@ body {
   display: flex;
   justify-content: flex-start;
 }
+.arrow:hover {
+  cursor: pointer;
+}
 
 .arrowForward {
   display: flex;
   justify-content: flex-end;
+}
+.arrowForward:hover {
+  cursor: pointer;
 }
 
 .darkbg {

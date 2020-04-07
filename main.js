@@ -87,6 +87,21 @@ function displayModal(index) {
 
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
+
+    const modal = document.querySelector('.modal');
+
+    // enabling arrows on each side of the employee cards
+    modal.addEventListener('click', (e =>{
+    const leftArrow = document.querySelector(".arrow img");
+    const rightArrow = document.querySelector(".arrowForward img");
+    if (e.target === leftArrow && index > 0) {
+        displayModal(index--);
+    } else if (e.target === rightArrow && index < 11) {
+        displayModal(index++);
+    } else {
+        return;
+    }
+}));
 }
 
 gridContainer.addEventListener('click', e => {
@@ -105,16 +120,3 @@ gridContainer.addEventListener('click', e => {
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
-
-const modal = document.querySelector('.modal');
-
-// enabling arrows on each side of the employee cards
-modal.addEventListener('click', (e =>{
-    const leftArrow = document.querySelector(".arrow");
-    const rightArrow = document.querySelector(".arrowForward");
-    if (e.target === leftArrow) {
-        displayModal++;
-    } else if (e.target === rightArrow) {
-        displayModal--;
-    }
-}))
