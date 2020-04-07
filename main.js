@@ -115,7 +115,7 @@ let index = parseInt(this.dataset.index);
 function viewModal(index) {
     if (index++) {
         displayModal(+1);
-    } else (index--) {
+    } else if (index--) {
         displayModal(-1);
     }
 }
