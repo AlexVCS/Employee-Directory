@@ -45,7 +45,7 @@ function displayEmployees(employeeData) {
         const employeeCards = document.querySelectorAll(".card");
         for (let i = 0; i < names.length; i++) {
           let name = names[i].textContent.toLowerCase();
-          let filter = event.target.value;
+          let filter = event.target.value.toLowerCase();
           if (name.indexOf(filter) > -1) {
             employeeCards[i].style.display = "";
           } else {
@@ -106,10 +106,16 @@ modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
 
-// document.querySelector(".arrow").addEventListener('click');
-// document.querySelector(".arrowForward").addEventListener('click',);
+document.querySelector(".arrow").addEventListener('click');
+document.querySelector(".arrowForward").addEventListener('click');
+
+let index = parseInt(this.dataset.index);
 
 // enabling arrows on each side of the employee cards
-// function nextCard(employee) {
-
-// }
+function viewModal(index) {
+    if (index++) {
+        displayModal(+1);
+    } else (index--) {
+        displayModal(-1);
+    }
+}
