@@ -94,9 +94,9 @@ function displayModal(index) {
     modal.addEventListener('click', (e =>{
     const leftArrow = document.querySelector(".arrow img");
     const rightArrow = document.querySelector(".arrowForward img");
-    if (e.target === leftArrow && index > 0) {
+    if (e.target === leftArrow && index >= 0) {
         displayModal(index--);
-    } else if (e.target === rightArrow && index < 11) {
+    } else if (e.target === rightArrow && index <= 11) {
         displayModal(index++);
     } else {
         return;
